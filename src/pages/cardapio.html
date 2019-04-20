@@ -2,16 +2,236 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Menu</title>
-    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <title>Cardapio</title>
 </head>
 
 <body>
-
+    <div class="container-fluid, topo" id="topo">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6"><img src="https://logodownload.org/wp-content/uploads/2016/09/Outback-logo-.png" alt="LaCarte" id="iconTopo"></div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+    <nav class="container-fluid, menu" id="menu">
+        <div class="row">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Pratos principais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Bebidas
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Sobremesas
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid, itens">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TESTE DE IMPLEMENTAÇÃO VIA JS-->
+        <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://media-cdn.tripadvisor.com/media/photo-s/0b/6e/2f/56/ribs-on-the-barbie-do.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="https://dhojeinterior.com.br/wp-content/uploads/2017/09/Imagem-do-lanche.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-secondary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="../../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
