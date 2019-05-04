@@ -1,0 +1,147 @@
+body{
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.carrossel{
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0px;
+}
+
+header{
+    height: 142px;
+}
+
+nav.menu-fixo{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.topo{
+    position: relative;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(255, 255, 255);
+}
+img#iconTopo{
+    margin-top: 4px;
+    height: 100px;
+}
+.menu{
+    min-height: 30px;
+    text-align: center;
+    background-color: white;
+}
+.itens{
+    padding: 30px 5px;
+    z-index: -1;
+}
+
+.card{
+    display: inline;
+}
+
+/* interação js fixar menu e esconder topo*/
+.fixarMenu{
+    z-index: 1;
+    width: 100%;
+    padding: 17px 0px 10px;
+    position:fixed;
+    margin-top: 0px !important;
+    background-color: rgb(10, 160, 140);
+}
+.topoDois{
+    height: 0px;
+}
+
+
+/* slide de comida*/
+
+.swiper-comida {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  /* slide de comida*/
+
+.swiper-bebida {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  /* slide de comida*/
+
+.swiper-sobremesa {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .btn {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .btn:hover {
+    background-color:#ffc107; /* Green */
+    color:black;
+    border: 2px solid white;
+  }
