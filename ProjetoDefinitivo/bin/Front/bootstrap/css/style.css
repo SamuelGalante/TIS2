@@ -1,0 +1,95 @@
+body{
+    margin: 0px;
+    overflow: auto;
+}
+
+#cabecalho{
+    background-color: rgb(226, 93, 4);
+    min-height: 110px;
+}
+
+#areaUsuario{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+}
+
+#areaUsuario:hover{
+    text-decoration: underline;
+}
+
+#areaConfig{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+}
+
+#areaConfig:hover{
+    text-decoration: underline;
+}
+
+
+#menu{
+    padding-top: 20px;
+}
+
+.nav-item{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(175, 113, 12);
+}
+
+#conteudo{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    height: 30px;
+}
+.card-title{
+    color: rgb(175, 113, 12);
+}
+/* Tabelas */
+
+.table_header:hover{
+    cursor: default;
+    background-color: white;
+}
+tr{
+    border-bottom: 1.5px solid rgb(243, 242, 242);
+    max-height: 20px;
+}
+tr:hover{
+    cursor: pointer;
+    background-color: rgb(255, 222, 168);
+}
+
+#table_head{
+    background-color: rgb(255, 255, 255) !important;
+    cursor: default;
+}
+
+.jsonImg{
+    max-width: 40px;
+}
+/* card */
+
+
+#imgContent{
+    display: flex;
+    justify-content: center;
+}
+
+#imgProd{
+    max-width: 286px;
+    max-height: 180px;
+}
+
+#imgFile:hover{
+    cursor: pointer;
+}

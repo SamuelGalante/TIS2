@@ -1,0 +1,516 @@
+<html>
+
+<head>
+  <meta content="text/html; charset = utf-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações</title>
+</head>
+
+<body onload="GetIt('http://localhost:7200/ReadProdutos')">
+  <header>
+
+  </header>
+  <div class="container-fluid">
+
+    <!-- Conteúdo -->
+    <div id="conteudo">
+
+      <!--Navs-->
+      <div class="container">
+
+        <nav class="justify-content-center" style="margin-bottom: 5vh;">
+          <div class="nav nav-tabs">
+            <a class="nav-item nav-link active" data-toggle=tab href="#produtos"
+              onclick="GetIt('http://localhost:7200/ReadProdutos')">Produtos</a>
+            <a class="nav-item nav-link" data-toggle=tab href="#cardapios"
+              onclick="GetIt('http://localhost:7200/ReadCardapios')">Cardápios</a>
+            <a class="nav-item nav-link" data-toggle=tab href="#garcons"
+              onclick="GetIt('http://localhost:7200/ReadGarcons')">Garçons</a>
+            <a class="nav-item nav-link" data-toggle=tab href="#comandas"
+              onclick="GetIt('http://localhost:7200/ReadComandas')">Comandas</a>
+            <a class="nav-item nav-link" data-toggle=tab href="#pedidos"
+              onclick="GetIt('http://localhost:7200/ReadPedidos')">Pedidos</a>
+          </div>
+        </nav>
+
+      </div>
+
+      <!--Áreas-->
+      <div class="container">
+
+        <div class="tab-content">
+
+          <!--Área de produtos-->
+          <div class="tab-pane fade show active" id="produtos">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Produtos
+                      <button type="button" onclick="modalAdd('#modalProduto')" class="btn btn-success float-right"
+                        style="margin-top: 5px">Adicionar</button></h3>
+                  </div>
+                  <div class="card-body">
+                    <table class="table">
+                      <thead>
+                        <tr id="theadProd" class="table_header">
+                          <th scope="col">#</th>
+                          <th scope="col">Código</th>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Tipo</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Excluir</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyProd">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Área de cardapios-->
+          <div class="tab-pane fade" id="cardapios">
+            <div class="container">
+              <div class="row">
+                <div class="col-7">
+                  <div class="card">
+                    <div class="card-header">
+                      <span>
+                        <h3 class="card-title">Cardápio <button type="button" onclick="modalAdd('#modalCardapio')"
+                            class="btn btn-success float-right" style="margin-top: 5px">Adicionar</button></h3>
+                      </span>
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr id="theadCard" class="table_header">
+                            <th scope="col">#</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbodyCard">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-5">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Produtos do cardápio de código:
+                        <span id="idCardapioSelected"></span>
+                        <button type="button" onclick="modalProd()" class="btn btn-success float-right"
+                          style="margin-top: 5px">Adicionar</button></h3>
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr class="table_header">
+                            <th scope="col">#</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Valor</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbodyProdCard">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Área de garçons-->
+          <div class="tab-pane fade" id="garcons">
+            <div class="container">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Garçons
+                    <button type="button" onclick="modalAdd('#modalGarcom')" class="btn btn-success float-right"
+                      style="margin-top: 5px">Adicionar</button></h3>
+                </div>
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr id="theadGarc" class="table_header">
+                        <th scope="col">#</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nome</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyGarc">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Área de comandas-->
+          <div class="tab-pane fade" id="comandas">
+            <div class="container">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Comandas</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr id="theadComan" class="table_header">
+                        <th scope="col">#</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Mesa</th>
+                        <th scope="col">Avaliação</th>
+                        <th scope="col">Pagamento</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyComan">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Área de pedidos-->
+          <div class="tab-pane fade" id="pedidos">
+            <div class="container">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Pedidos</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table">
+                    <thead>
+                      <tr id="theadPedid" class="table_header">
+                        <th scope="col">#</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Comanda</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Quantidade</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyPedid">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Modals -->
+    <div>
+
+      <!--Modal produto-->
+      <div class="modal" role="dialog" id="modalProduto">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastro de Produto</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario" action="http://localhost:7200/CreateProduto" method="post">
+                <div class="form-row">
+                  <div class="form-group col-md-7">
+                    <label for="inputNome">Nome **</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome do Produto" name="nome"
+                      required>
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputTipo">Tipo **</label>
+                    <input type="text" class="form-control" id="inputTipo" size=4 placeholder="Bebida/Sanduiche"
+                      name="tipo" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-7">
+                    <label for="inputDescricao">Descrição **</label>
+                    <input type="text" class="form-control" id="inputDescricao" placeholder="Descrição do Produto"
+                      name="descricao" required>
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputValor">Valor: R$ **</label>
+                    <input type="text" class="form-control" id="inputValor" name="valor" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="imgFile"  onchange="carregarImg()">
+                      <label class="custom-file-label" for="imgFile">Escolha a imagem</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="text" id="codImg" class="form-control" name="imgFile">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col" id="imgContent">
+                    <img src="" id="imgProd" nome="imgProd">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal cardapio-->
+      <div class="modal" role="dialog" id="modalCardapio">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastro de Cardápio</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario" action="http://localhost:7200/CreateCardapio" method="post">
+                <div class="form-row">
+                  <div class="form-group col-md-7">
+                    <label for="inputDescricao">Descrição **</label>
+                    <input type="text" class="form-control" id="inputDescricao" placeholder="Descrição do Cardapio"
+                      name="descricao" required>
+                  </div>
+                  <div class="form-check col-md-5" style="padding-left: 6vh;">
+                    <input type="checkbox" class="form-check-input" id="inputStatus" checked value="1" name="status">
+                    <label class="form-check-label" for="inputStatus">Ativo</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal garçom-->
+      <div class="modal" role="dialog" id="modalGarcom">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastro de Garçom</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario" action="http://localhost:7200/CreateGarcom" method="post">
+                <div class="form-row">
+                  <div class="form-group col-md-7">
+                    <label for="inputNome">Nome **</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome do Garçom" name="nome"
+                      required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal produto cardapio-->
+      <div class="modal" role="dialog" id="modalProdCard">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastro de Produtos em um Cardápio</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario" action="http://localhost:7200/CreateProdutoCardapio" method="post">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputCardapioProd">Cardapio **</label>
+                    <input type="text" class="form-control" id="inputCardapioProd" name="idCardapio" required>
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="inputProdutoCard">Produto **</label>
+                    <select class="form-control" id="inputProdutoCard" name="idProdutos" required></select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Cadastrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/main.js"></script>
+    <script language="JavaScript" type="text/javascript">
+
+      (function ($) {
+        remove = function (item) {
+          var tr = $(item).closest('tr');
+          tr.fadeOut(200, function () {
+            tr.remove();
+          });
+
+          return false;
+        }
+      })(jQuery);
+
+      function modalProd() {
+        this.modalAdd('#modalProdCard');
+        this.GetIt('http://localhost:7200/ReadProdutos');
+      }
+
+      function GetIt(url) {
+        var params = url.split('?')[1];
+        var xmlhttp = new FactoryXMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4) {
+            // Javascript function JSON.parse to parse JSON data
+            var jsonObj = JSON.parse(xmlhttp.responseText);
+            var body = ``;
+
+            if (jsonObj.listaGarcons) {
+              var garcons = jsonObj.listaGarcons;
+              garcons.forEach((garc, g) => {
+                body += `<tr>
+                <th scope="row">${g + 1}</th>
+                <td>${garc.idGarcom}</td>
+                <td>${garc.nome}</td>
+                </tr>`;
+              });
+
+              document.getElementById("tbodyGarc").innerHTML = body;
+
+            } else if (jsonObj.listaProdutos) {
+              var produtos = jsonObj.listaProdutos;
+              var body2 = ``;
+              produtos.forEach((prod, p) => {
+                body += `<tr class="clickTable">
+                <th scope="row">${p + 1}</th>
+                <td>${prod.idProdutos}</td>
+                <td>${prod.nome}</td>
+                <td>${prod.tipo}</td>
+                <td>${prod.valor}</td>
+                <td><button type="button" onclick="remove(this)" class="btn btn-danger btn-xs">Excluir</button></td>
+                </tr>`;
+                body2 += `
+                  <option value="${prod.idProdutos}">${prod.nome}</option>
+                `;
+              });
+
+              document.getElementById("tbodyProd").innerHTML = body;
+              document.getElementById("inputProdutoCard").innerHTML = body2;
+              document.getElementById("inputCardapioProd").value = document.getElementById("idCardapioSelected").innerHTML;
+
+            } else if (jsonObj.listaCardapio) {
+              var cardapios = jsonObj.listaCardapio;
+              cardapios.forEach((card, c) => {
+                body += `<tr onclick="GetIt(\`http://localhost:7200/ReadProdutosCardapio?idCardapio=${card.idCardapio}\`)">
+                <th scope="row">${c + 1}</th>
+                <td>${card.idCardapio}</td>
+                <td>${card.descricao}</td>
+                <td>${card.status}</td>
+                </tr>`;
+              });
+
+              document.getElementById("tbodyCard").innerHTML = body;
+
+            } else if (jsonObj.listaProdutosCardapio) {
+              var prods_card = jsonObj.listaProdutosCardapio;
+              prods_card.forEach((prod, p) => {
+                body += `<tr>
+                <th scope="row">${p + 1}</th>
+                <td>${prod.idProdutos}</td>
+                <td>${prod.nomeProduto}</td>
+                <td>${prod.valorProduto}</td>
+                </tr>`;
+              });
+
+              var idCardapio = parseInt(params.split('idCardapio=')[1]);
+              document.getElementById("idCardapioSelected").innerHTML = idCardapio;
+              document.getElementById("tbodyProdCard").innerHTML = body;
+
+            } else if (jsonObj.listaComandas) {
+              var comandas = jsonObj.listaComandas;
+              comandas.forEach((coman, c) => {
+                body += `<tr>
+                <th scope="row">${c + 1}</th>
+                <td>${coman.idComanda}</td>
+                <td>${coman.data}</td>
+                <td>${coman.mesa}</td>
+                <td>${coman.avaliacao}</td>
+                <td>${coman.pagamento}</td>
+                </tr>`;
+              });
+
+              document.getElementById("tbodyComan").innerHTML = body;
+
+            } else if (jsonObj.listaPedidos) {
+              var pedidos = jsonObj.listaPedidos;
+              pedidos.forEach((pedid, p) => {
+                body += `<tr>
+                <th scope="row">${p + 1}</th>
+                <td>${pedid.idPedidos}</td>
+                <td>${pedid.idComanda}</td>
+                <td>${pedid.nomeProduto}</td>
+                <td>${pedid.valorProduto}</td>
+                <td>${pedid.quantidade}</td>
+                </tr>`;
+              });
+
+              document.getElementById("tbodyPedid").innerHTML = body;
+            }
+          }
+        }
+
+        if (xmlhttp) {
+          xmlhttp.open('get', url, true);
+          xmlhttp.send();
+        }
+      }
+      function carregarImg() {
+        let files = document.getElementById('imgFile').files;
+
+        if (FileReader && files && files.length) {
+          var fr = new FileReader();
+          fr.onload = function () {
+            let imgElement = document.getElementById('imgProd');
+            imgElement.src = fr.result;
+            document.getElementById('imgProd').value = fr.result;
+            document.getElementById('codImg').value = fr.result;
+          }
+          fr.readAsDataURL(files[0]);
+        }
+      }
+    </script>
+</body>
+
+</html>

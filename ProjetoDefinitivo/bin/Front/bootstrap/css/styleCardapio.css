@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    overflow: auto;
+}
+
+#header{
+    background-color: rgb(226, 93, 4);
+    max-height: 100px;
+}
+
+#carrinho{
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#btnCarrinho{
+    background-color: transparent;
+    max-height: 60px;
+    font-size: 20px;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.tituloCardapios{
+    color: rgb(9, 87, 16);
+}
+
+#imgCard{
+    align-content: center;
+    max-width: 680px;
+    max-height: 400px;
+}
+

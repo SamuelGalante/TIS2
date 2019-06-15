@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/doc/sources/src/|doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/|doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/" kind="src" path="mysql/src"/>
+	<classpathentry excluding="doc/sources/src/|doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/" kind="src" path="mysql/src/doc/sources/TIS2/external/mysql-connector-java-5.1.47/src"/>
+	<classpathentry kind="src" path="mysql/src/doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/doc/sources/src"/>
+	<classpathentry kind="src" path="mysql/src/doc/sources/TIS2/external/mysql-connector-java-5.1.47/src/doc/sources/TIS2/external/mysql-connector-java-5.1.47/src"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/adaptive"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/alwaysencrypted"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/azureactivedirectoryauthentication"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/connections"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/constrained"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/dataclassification"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/datatypes"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/resultsets"/>
+	<classpathentry kind="src" path="sql-server/sqljdbc_7.2/ptb/samples/sparse"/>
+	<classpathentry kind="lib" path="googleFilesJar/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/google-api-client-1.22.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/google-api-services-sqladmin-v1beta4-rev25-1.22.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/google-http-client-1.22.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/google-http-client-jackson2-1.22.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/google-oauth-client-1.22.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/guava-jdk5-17.0.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/httpclient-4.0.1.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/jackson-core-2.1.3.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/mysql-socket-factory-1.0.2.jar"/>
+	<classpathentry kind="lib" path="googleFilesJar/mysql-socket-factory-core-1.0.2.jar"/>
+	<classpathentry kind="lib" path="gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="json-20160810.jar"/>
+	<classpathentry kind="lib" path="mysql/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry kind="lib" path="mysql/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="simple/simple-common-6.0.1.jar"/>
+	<classpathentry kind="lib" path="simple/simple-http-6.0.1.jar"/>
+	<classpathentry kind="lib" path="simple/simple-transport-6.0.1.jar"/>
+	<classpathentry kind="lib" path="simple/simple-xml-2.7.1.jar"/>
+	<classpathentry kind="lib" path="sql-server/sqljdbc_7.2/ptb/mssql-jdbc-7.2.2.jre11.jar"/>
+	<classpathentry kind="lib" path="sql-server/sqljdbc_7.2/ptb/mssql-jdbc-7.2.2.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/json-20160810.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/mysql/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/mysql/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/simple/simple-common-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/simple/simple-http-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/simple/simple-transport-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/simple/simple-xml-2.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/sql-server/sqljdbc_7.2/ptb/mssql-jdbc-7.2.2.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Samsung/Desktop/Faculdade/LaCarte/BackEnd - TIS/external/sql-server/sqljdbc_7.2/ptb/mssql-jdbc-7.2.2.jre11.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

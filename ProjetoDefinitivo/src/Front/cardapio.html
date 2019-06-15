@@ -1,0 +1,210 @@
+<html>
+
+<head>
+  <meta content="text/html; charset = utf-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/styleCardapio.css">
+  <title> Cardápio</title>
+</head>
+
+<body onload="GetIt('http://localhost:7200/ReadProdutos')">
+  <div class="row align-items-center" id="header">
+    <div class="col-2 ml-5">
+      <h5 onclick="openPage('config.html')" id="areaConfig"> CONFIGURAÇÕES </h5>
+    </div>
+    <div class="col- m-auto" id="logo">
+      <img src="img/logo.png" style="max-height: 100px; padding-top: 5px; padding-bottom: 5px;">
+    </div>
+    <div class="col-2 mr-4">
+      <div id="carrinho" onclick="modalAdd('#modalCarrinho'); GetIt(`http://localhost:7200/ReadPedidosComanda`)" style="cursor: pointer;">
+        <h5 class="my-auto mr-2">CARRINHO</h5>
+        <img src="img/car01.png" style="max-height: 30px;">
+      </div>
+    </div>
+  </div>
+  <div class="card-body" style="height: 95vh; padding: 0px">
+    <table class="table">
+      <tbody id="tbodyProd">
+        <div class="swiper-sobremesa">
+          <div class="swiper-wrapper">
+          </div>teste
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Modal carrinho-->
+  <div class="modal" role="dialog" id="modalCarrinho">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formulario">
+            <div class="tab-pane fade show active" id="produtos">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Carrinho</h3>
+                      <div class="row">
+                        <div class="col">
+                          <h4>Total: </h4>
+                          <span id="totalComanda"></span>
+                        </div>
+                        <div class="rol">
+                          <button onclick="GetIt(`http://localhost:7200/UpdateComanda`)" type="button" class="btn btn-danger like-btn">Fechar Comanda</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr id="theadProd" class="table_header">
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Valor</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbodyPedid">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Produto -->
+  <div class="modal" id="modalProduto" tabindex="-1" role="dialog">
+  
+</div>
+
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+  <script src="bootstrap/js/main.js"></script>
+  <script language="JavaScript" type="text/javascript">
+
+    function modalProduto() {
+
+
+    }
+    function GetIt(url) {
+      var params = url.split('?')[1];
+      var xmlhttp = new FactoryXMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4) {
+          // Javascript function JSON.parse to parse JSON data
+          var jsonObj = JSON.parse(xmlhttp.responseText);
+          var body = ``;
+
+          if (jsonObj.listaProdutos) {
+            var produtos = jsonObj.listaProdutos;
+            produtos.forEach((prod, p) => {
+              body += `
+              <div class="card-body" style="display: inline-block;">
+              <table class="table">
+              <div class="card" style="width: 18rem; min-height: 300px;">
+              <span id="prodCod"></span>
+                  <div class="card-body">
+                    <h5 class="card-title">${prod.nome}</h5>
+                    <p class="card-text">${prod.descricao}</p>
+                    <p class="card-text">R$ ${prod.valor}</p>
+                    <div class="row">
+                    <div class="col-7">
+                      <button onclick="GetIt(\`http://localhost:7200/CreatePedido?idProduto=${prod.idProdutos}\`)" type="button" class="btn btn-secondary like-btn">Fazer pedido</button>
+                    </div>
+                    <div class="col-5">
+                      <button onClick="GetIt(\`http://localhost:7200/ReadImagem?idProduto=${prod.idProdutos}\`); modalAdd('#modalProduto');" type="button" class="btn btn-secondary like-btn">Visualizar</button>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </table>
+            </div>
+            `;
+            });
+            document.getElementById("tbodyProd").innerHTML = body;
+
+          } else if (jsonObj.listaPedidos) {
+            var pedidos = jsonObj.listaPedidos;
+
+            console.log("Pedidos: ", pedidos);
+            pedidos.forEach((pedid, p) => {
+              body += `<tr>
+                <th scope="row">${p+1}</th>
+                <td>${pedid.idPedidos}</td>
+                <td>${pedid.idComanda}</td>
+                <td>${pedid.idProdutos}</td>
+                <td>${pedid.quantidade}</td>
+                </tr>`;
+              var n = `<span class="badge badge-light" id="nPedidos">${p}</span>`;
+            });
+
+            document.getElementById("tbodyPedid").innerHTML = body;
+            document.getElementById("btnCarrinho").innerHTML = n;
+          } else if (jsonObj.PedidosComanda) {
+
+              var pedidos = jsonObj.PedidosComanda;
+              var total = 0;
+              pedidos.forEach((pedid, p) => {
+                body += `<tr>
+                  <th scope="row">${p+1}</th>
+                  <td>${pedid.nomeProduto}</td>
+                  <td>${pedid.quantidade}</td>
+                  <td>${pedid.valorProduto}</td>
+                  </tr>`;
+                  total += pedid.valorProduto;
+              });
+
+              document.getElementById("tbodyPedid").innerHTML = body;
+              document.getElementById("totalComanda").innerHTML = total;
+
+            } else if (jsonObj.Comanda) {
+
+                console.log("refreshhhh");
+                document.location.reload();
+
+            } else if (jsonObj.imgProduto){
+              var produtos = jsonObj.imgProduto;
+              produtos.forEach((prod, p) => {
+                body += `
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <img src="data:image/image/jpeg;base64,${prod.img}" class="card-img-top" id="imgCard">
+                    </div>
+                    <h5 class="modal-title" style="padding-left: 5px;">${prod.nome}</h5>
+                    <div class="modal-body">
+                      <p>${prod.descricao}.</p>
+                    </div>
+                    <div class="modal-footer">
+                      
+                    </div>
+                  </div>
+                </div>
+                `
+              })
+            }
+          document.getElementById("modalProduto").innerHTML = body;
+        } 
+      }
+
+      if (xmlhttp) {
+        xmlhttp.open('get', url, true);
+        xmlhttp.send();
+      }
+    }
+  </script>
+</body>
+
+</html>
